@@ -89,6 +89,8 @@ bin
             └── hello.exe
 ```
 
+See `goxcart -help` for more details.
+
 # ABOUT
 
 goxcart helps Go developers build programs for more platforms. While Go and gox already provide a lot of support for basic cross-platform builds, goxcart takes this further, enabling more target tuples than are currently available for host-run builds. For example, goxcart can build Go binaries targeting:
