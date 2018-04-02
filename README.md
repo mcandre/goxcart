@@ -102,6 +102,10 @@ goxcart helps Go developers build programs for more platforms. While Go and gox 
 
 goxcart does this by building applications inside reusable Docker containers configured for these additional targets.
 
+# DOWNLOAD
+
+https://github.com/mcandre/goxcart/releases
+
 # RUNTIME REQUIREMENTS
 
 * [Docker](https://www.docker.com/)
