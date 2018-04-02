@@ -169,7 +169,7 @@ func (o PortConfig) portJob(job PortJob) error {
 		status := scanner.Text()
 
 		if !SuccessExitStatusPattern.MatchString(status) {
-			return fmt.Errorf("docker wait %s returned exit status %s")
+			return fmt.Errorf("docker wait %s returned exit status %s", id, status)
 		}
 	}
 
