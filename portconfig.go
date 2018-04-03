@@ -11,9 +11,9 @@ type PortConfig struct {
 	// Example: bin
 	OutputDirectory string
 
-	// Banner provides an optional label for the artifact tree, such as a version number.
+	// Banner provides a label for the artifact tree (required).
 	//
-	// Example: 0.0.1
+	// Example: hextime-0.0.1
 	Banner string
 
 	// Repository denotes the Go repository namespace of a project.
@@ -58,8 +58,12 @@ func NewPortConfig() PortConfig {
 
 // Validate checks a PortConfig for some parameter mistakes.
 func (o PortConfig) Validate() error {
+	if o.Banner == "" {
+		return errors.New("Blank banner")
+	}
+
 	if o.CommandPaths == "" {
-		return errors.New("Empty command path")
+		return errors.New("Blank command path")
 	}
 
 	return nil

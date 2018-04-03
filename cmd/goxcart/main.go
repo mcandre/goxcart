@@ -15,8 +15,8 @@ import (
 var flagRemove = flag.Bool("remove", true, "Automatically remove Docker containers upon termination")
 var flagImage = flag.String("image", "", "Docker image name, e.g. mcandre/docker-gox")
 var flagOutput = flag.String("output", "", "output directory, e.g. bin")
-var flagBanner = flag.String("banner", "", "artifact version, e.g. 0.0.1")
 var flagRepository = flag.String("repo", "", "Repository namespace, e.g. github.com/mcandre/go-hextime")
+var flagBanner = flag.String("banner", "", "artifact label (required), e.g. hextime-0.0.1")
 var flagCommands = flag.String("commands", "", "command paths (required), e.g. ./cmd/...")
 var flagVerbose = flag.Bool("verbose", false, "Enable additional logging")
 var flagHelp = flag.Bool("help", false, "Show usage information")
@@ -57,12 +57,14 @@ func main() {
 		config.OutputDirectory = *flagOutput
 	}
 
-	if *flagBanner != "" {
-		config.Banner = *flagBanner
-	}
-
 	if *flagRepository != "" {
 		config.Repository = *flagRepository
+	}
+
+	if *flagBanner != "" {
+		config.Banner = *flagBanner
+	} else {
+		flag.PrintDefaults()
 	}
 
 	if *flagCommands != "" {

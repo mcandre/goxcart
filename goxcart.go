@@ -58,13 +58,8 @@ func (o PortConfig) portJob(job PortJob) error {
 	goxOutputStructureBuffer.WriteString(o.Repository)
 	goxOutputStructureBuffer.WriteString("/")
 	goxOutputStructureBuffer.WriteString(o.OutputDirectory)
-	goxOutputStructureBuffer.WriteString("/{{.Dir}}")
-
-	if o.Banner != "" {
-		goxOutputStructureBuffer.WriteString("-")
-		goxOutputStructureBuffer.WriteString(o.Banner)
-	}
-
+	goxOutputStructureBuffer.WriteString("/")
+	goxOutputStructureBuffer.WriteString(o.Banner)
 	goxOutputStructureBuffer.WriteString("/{{.OS}}")
 
 	if platformGroup.OSVariant != "" {
@@ -77,7 +72,7 @@ func (o PortConfig) portJob(job PortJob) error {
 	var dockerCommandBuffer bytes.Buffer
 	dockerCommandBuffer.WriteString("cd ")
 	dockerCommandBuffer.WriteString(sourcePath)
-	dockerCommandBuffer.WriteString(" && gox -output '")
+	dockerCommandBuffer.WriteString(" && gox -output='")
 	dockerCommandBuffer.WriteString(goxOutputStructureBuffer.String())
 	dockerCommandBuffer.WriteString("'")
 

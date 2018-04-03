@@ -38,7 +38,7 @@ func IntegrationTest() error {
 		"-output",
 		integrationTestArtifactsPath,
 		"-banner",
-		"0.0.1",
+		"hello-0.0.1",
 		"-commands",
 		"./...",
 	)

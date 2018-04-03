@@ -6,7 +6,7 @@
 
 ```console
 $ cd test
-$ goxcart -output bin -banner "0.0.1" -commands ./cmd/...
+$ goxcart -output bin -banner "hello-0.0.1" -commands ./cmd/...
 
 $ tree bin
 bin
