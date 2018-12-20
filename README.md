@@ -183,4 +183,5 @@ $ mage clean; mage uninstall; mage -clean
 
 # SEE ALSO
 
-[tonixxx](https://github.com/mcandre/tonixxx) can port projects written in many more programming languages
+* [CloudABI](https://nuxi.nl/) provides a C-level abstraction for applications to run on many different platforms.
+* [tonixxx](https://github.com/mcandre/tonixxx) can port projects written in many more programming languages
