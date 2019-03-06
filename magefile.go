@@ -51,8 +51,8 @@ func IntegrationTest() error {
 // Test executes unit and integration tests.
 func Test() error { mg.Deps(UnitTest); mg.Deps(IntegrationTest); return nil }
 
-// GoVet runs go tool vet.
-func GoVet() error { return mageextras.GoVet("-shadow") }
+// GoVet runs go vet with shadow checks enabled.
+func GoVet() error { return mageextras.GoVetShadow() }
 
 // GoLint runs golint.
 func GoLint() error { return mageextras.GoLint() }
