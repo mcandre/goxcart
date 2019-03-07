@@ -124,6 +124,7 @@ https://github.com/mcandre/goxcart/releases
 * [golint](https://github.com/golang/lint) (e.g. `go get github.com/golang/lint/golint`)
 * [errcheck](https://github.com/kisielk/errcheck) (e.g. `go get github.com/kisielk/errcheck`)
 * [nakedret](https://github.com/alexkohler/nakedret) (e.g. `go get github.com/alexkohler/nakedret`)
+* [shadow](golang.org/x/tools/go/analysis/passes/shadow/cmd/shadow) (e.g. `go get -u golang.org/x/tools/go/analysis/passes/shadow/cmd/shadow`)
 * [gox](https://github.com/mitchellh/gox) (e.g. `go get github.com/mitchellh/gox`)
 * [zipc](https://github.com/mcandre/zipc) (e.g. `go get github.com/mcandre/zipc/...`)
 
