@@ -54,9 +54,6 @@ func (o PortConfig) portJob(job PortJob) error {
 	}
 
 	var goxOutputStructureBuffer bytes.Buffer
-	goxOutputStructureBuffer.WriteString("/go/src/")
-	goxOutputStructureBuffer.WriteString(o.Repository)
-	goxOutputStructureBuffer.WriteString("/")
 	goxOutputStructureBuffer.WriteString(o.OutputDirectory)
 	goxOutputStructureBuffer.WriteString("/")
 	goxOutputStructureBuffer.WriteString(o.Banner)

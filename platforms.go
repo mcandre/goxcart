@@ -38,7 +38,6 @@ var PlatformGroups = []PlatformGroup{
 		OSVariant:   "musl",
 		OSs:         []string{"linux"},
 		Archs:       []string{"amd64"},
-		LinkerFlags: "-linkmode external",
 	},
 	// linux-gnu
 	{
@@ -62,12 +61,6 @@ var PlatformGroups = []PlatformGroup{
 	{
 		ImageTag: "glibc",
 		OSs:      []string{"plan9", "solaris"},
-	},
-	// android
-	{
-		ImageTag: "glibc",
-		OSs:      []string{"android"},
-		Archs:    []string{"386"},
 	},
 	// most platforms
 	{
