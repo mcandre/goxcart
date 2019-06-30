@@ -95,7 +95,6 @@ See `goxcart -help` for more details.
 
 goxcart helps Go developers build programs for more platforms. While Go and gox already provide a lot of support for basic cross-platform builds, goxcart takes this further, enabling more target tuples than are currently available for host-run builds. For example, goxcart can build Go binaries targeting:
 
-* android
 * dragonfly
 * linux-musl
 * nacl
@@ -103,6 +102,8 @@ goxcart helps Go developers build programs for more platforms. While Go and gox 
 * solaris
 
 goxcart does this by building applications inside reusable Docker containers configured for these additional targets.
+
+Note that some hosts may require manual `chown`, `chmod` corrections to build artifacts. This is a known issue with [Docker](https://github.com/moby/moby/issues/39441) on GNU/Linux hosts.
 
 # DOWNLOAD
 
