@@ -105,6 +105,8 @@ goxcart does this by building applications inside reusable Docker containers con
 
 Note that some hosts may require manual `chown`, `chmod` corrections to build artifacts. This is a known issue with [Docker](https://github.com/moby/moby/issues/39441) on GNU/Linux hosts.
 
+Note that any C / cgo dependencies are likely to present challenges to cross-platform builds. In this case, we recommend creating dedicated build VM's, one per build target a la [tonixxx](https://github.com/mcandre/tonixxx).
+
 # DOWNLOAD
 
 https://github.com/mcandre/goxcart/releases
