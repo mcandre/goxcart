@@ -7,11 +7,13 @@ import (
 	"os"
 	"os/signal"
 	"regexp"
+	"strings"
 	"syscall"
 
 	"github.com/mcandre/goxcart"
 )
 
+var flagExcludeOS = flag.String("exclude-os", "", "exclude operating system targets (space delimited)")
 var flagRemove = flag.Bool("remove", true, "Automatically remove Docker containers upon termination")
 var flagImage = flag.String("image", "", "Docker image name, e.g. mcandre/docker-gox")
 var flagOutput = flag.String("output", "", "output directory, e.g. bin")
@@ -36,6 +38,10 @@ func main() {
 	flag.Parse()
 
 	config := goxcart.NewPortConfig()
+
+	if *flagExcludeOS != "" {
+		config.OSExclusions = strings.Split(*flagExcludeOS, " ")
+	}
 
 	switch {
 	case *flagHelp:

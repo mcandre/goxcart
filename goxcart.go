@@ -211,6 +211,27 @@ func (o *PortConfig) Port() error {
 	}
 
 	for _, platformGroup := range PlatformGroups {
+		defaultOSs := platformGroup.OSs
+
+		var oss []string
+
+		for _, defaultOS := range defaultOSs {
+			var foundExclusion bool
+
+			for _, osExclusion := range o.OSExclusions {
+				if defaultOS == osExclusion {
+					foundExclusion = true
+					break
+				}
+			}
+
+			if !foundExclusion {
+				oss = append(oss, defaultOS)
+			}
+		}
+
+		platformGroup.OSs = oss
+
 		portJob := PortJob{
 			PlatformGroup:           platformGroup,
 			CurrentWorkingDirectory: cwd,

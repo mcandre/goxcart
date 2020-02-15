@@ -34,10 +34,10 @@ type PlatformGroup struct {
 var PlatformGroups = []PlatformGroup{
 	// linux-musl
 	{
-		ImageTag:    "musl",
-		OSVariant:   "musl",
-		OSs:         []string{"linux"},
-		Archs:       []string{"amd64"},
+		ImageTag:  "musl",
+		OSVariant: "musl",
+		OSs:       []string{"linux"},
+		Archs:     []string{"amd64"},
 	},
 	// linux-gnu
 	{

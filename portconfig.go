@@ -42,6 +42,9 @@ type PortConfig struct {
 	//
 	// Example: true
 	Verbose bool
+
+	// OSExclusions skips PlatformGroups matching the specified OS names.
+	OSExclusions []string
 }
 
 // NewPortConfig constructs a PortConfig.
