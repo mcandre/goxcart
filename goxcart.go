@@ -15,7 +15,7 @@ import (
 )
 
 // Version is semver.
-var Version = "0.0.4"
+var Version = "0.0.5"
 
 // ContainerIDPattern matches Docker container IDs as reported by `docker run -d`...
 var ContainerIDPattern = regexp.MustCompile(`^(?P<container>[0-9a-f]+)\s+$`)
