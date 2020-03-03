@@ -45,6 +45,9 @@ type PortConfig struct {
 
 	// OSExclusions skips PlatformGroups matching the specified OS names.
 	OSExclusions []string
+
+	// ArchExclusions skips PlatformGroups matching the specified architecture names.
+	ArchExclusions []string
 }
 
 // NewPortConfig constructs a PortConfig.

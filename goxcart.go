@@ -212,6 +212,7 @@ func (o *PortConfig) Port() error {
 
 	for _, platformGroup := range PlatformGroups {
 		defaultOSs := platformGroup.OSs
+		defaultArchs := platformGroup.Archs
 
 		var oss []string
 
@@ -230,7 +231,29 @@ func (o *PortConfig) Port() error {
 			}
 		}
 
+		var archs []string
+
+		for _, defaultArch := range defaultArchs {
+			var foundExclusion bool
+
+			for _, archExclusion := range o.ArchExclusions {
+				if defaultArch == archExclusion {
+					foundExclusion = true
+					break
+				}
+			}
+
+			if !foundExclusion {
+				archs = append(archs, defaultArch)
+			}
+		}
+
+		if len(oss) == 0 || len(archs) == 0 {
+			continue
+		}
+
 		platformGroup.OSs = oss
+		platformGroup.Archs = archs
 
 		portJob := PortJob{
 			PlatformGroup:           platformGroup,

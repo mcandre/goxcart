@@ -44,6 +44,7 @@ var PlatformGroups = []PlatformGroup{
 		ImageTag:  "glibc",
 		OSVariant: "glibc",
 		OSs:       []string{"linux"},
+		Archs:     []string{"386", "amd64", "arm", "arm64", "mips", "mips64", "mips64le", "mipsle", "ppc64", "ppc64le", "s390x"},
 	},
 	// dragonfly
 	{
@@ -57,14 +58,22 @@ var PlatformGroups = []PlatformGroup{
 		OSs:      []string{"nacl"},
 		Archs:    []string{"arm", "amd64p32"},
 	},
-	// plan9, solaris
+	// solaris
 	{
 		ImageTag: "glibc",
-		OSs:      []string{"plan9", "solaris"},
+		OSs:      []string{"solaris"},
+		Archs:    []string{"amd64"},
 	},
-	// most platforms
+	// assorted *NIX
 	{
 		ImageTag: "glibc",
-		OSs:      []string{"!linux", "!dragonfly", "!nacl", "!plan9", "!solaris", "!android"},
+		OSs:      []string{"freebsd", "netbsd", "plan9"},
+		Archs:    []string{"386", "amd64", "arm"},
+	},
+	// PC
+	{
+		ImageTag: "glibc",
+		OSs:      []string{"darwin", "openbsd", "windows"},
+		Archs:    []string{"386", "amd64"},
 	},
 }

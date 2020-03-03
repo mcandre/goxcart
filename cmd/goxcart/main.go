@@ -14,6 +14,7 @@ import (
 )
 
 var flagExcludeOS = flag.String("exclude-os", "", "exclude operating system targets (space delimited)")
+var flagExcludeArch = flag.String("exclude-arch", "", "exclude architecture targets (space delimited)")
 var flagRemove = flag.Bool("remove", true, "Automatically remove Docker containers upon termination")
 var flagImage = flag.String("image", "", "Docker image name, e.g. mcandre/docker-gox")
 var flagOutput = flag.String("output", "", "output directory, e.g. bin")
@@ -41,6 +42,10 @@ func main() {
 
 	if *flagExcludeOS != "" {
 		config.OSExclusions = strings.Split(*flagExcludeOS, " ")
+	}
+
+	if *flagExcludeArch != "" {
+		config.ArchExclusions = strings.Split(*flagExcludeArch, " ")
 	}
 
 	switch {
